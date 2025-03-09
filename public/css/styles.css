@@ -1,97 +1,174 @@
-html {
-    background-color: #E4E9FD;
-    background-image: -webkit-linear-gradient(87deg, #A683E3 23%, #E4E9FD 50%);
-    min-height: 1000px;
-    font-family: 'helvetica neue';
-  }
-  
-  h1 {
-    color: #fff;
-    padding: 10px;
-  }
-  
-  .box {
-    max-width: 400px;
-    margin: 50px auto;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
-  }
-  
-  #heading {
-    background-color: #A683E3;
-    text-align: center;
-  }
-  
-  .item {
-    min-height: 70px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #F1F1F1;
-  }
-  
-  .item:last-child {
-    border-bottom: 0;
-  }
-  
-  input:checked+p {
-    text-decoration: line-through;
-    text-decoration-color: #A683E3;
-  }
-  
-  input[type="checkbox"] {
-    margin: 20px;
-  }
-  
-  p {
-    margin: 0;
-    padding: 20px;
-    font-size: 20px;
-    font-weight: 200;
-    color: #00204a;
-  }
-  
-  form.item {
-    text-align: center;
-    margin-left: 20px;
-  }
-  
-  button {
-    min-height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    border-color: transparent;
-    background-color: #A683E3;
-    color: #fff;
-    font-size: 30px;
-    padding-bottom: 6px;
-    border-width: 0;
-  }
-  
-  input[type="text"] {
-    text-align: center;
-    height: 60px;
-    top: 10px;
-    border: none;
-    background: transparent;
-    font-size: 20px;
-    font-weight: 200;
-    width: 313px;
-  }
-  
-  input[type="text"]:focus {
-    outline: none;
-    box-shadow: inset 0 -3px 0 0 #A683E3;
-  }
-  
-  ::placeholder {
-    color: grey;
-    opacity: 1;
-  }
-  
-  footer {
-    color: white;
-    color: rgba(0, 0, 0, 0.5);
-    text-align: center;
-  }
-  
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Verdana', sans-serif;
+}
+
+.app-background {
+  min-height: 100vh;
+  background-image: linear-gradient(#A683E3, #1bbe72);
+  justify-content: center;
+  align-items: center;
+  padding: 2em 3em;
+  display: flex;
+}
+
+.todo-container {
+  color: white;
+  position: relative;
+  margin: auto;
+  padding: 20px;
+  width: 680px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-header {
+  margin: 5px;
+  font-family: 'Verdana', cursive;
+  font-size: 2em;
+  letter-spacing: 0.3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+}
+
+.todo-add-form {
+  font-family: 'Verdana', cursive;
+  padding: 7px;
+  display: flex;
+  align-items: center;
+}
+
+.todo-add-form input {
+  font-size: 16px;
+  height: 25px;
+  border: none;
+  border-radius: 7px;
+  margin: 5px;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.todo-add-form button {
+  font-family: 'Verdana', cursive;
+  cursor: pointer;
+  padding: 10px 10px;
+  font-size: 16px;
+  border-radius: 7px;
+  border: none;
+  background-color: #ffffff;
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.todo-list-background {
+  width: 75%;
+  border: none;
+  outline: none;
+  background: none;
+  cursor: initial;
+  word-wrap: break-word;
+  padding-bottom: 15px;
+}
+
+.todo-list-item {
+  overflow-y: hidden;
+  margin: 10px 0px;
+  padding: 10px;
+
+}
+
+.todo-list-item li {
+  font-size: 16px; /* TODO: Make buttons independent of this size */
+  padding: 10px;
+  margin: 15px 0px;
+  border: none;
+  border-radius: 7px;
+  background: rgba(0, 0, 10, 0.3);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style-type: none;
+  box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+/* buttons at the end of line*/
+.todo-list-item div {
+  flex-grow: 1;
+}
+
+.delete {
+  color: #de1e1e;
+  margin: 7px;
+  padding: 5px;
+}
+
+.edit-btn {
+  color: #00ed11;
+  margin: 7px;
+  text-decoration: none;
+}
+
+.todo-edit-form {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap; /* This lets the cancel/save be on their own line*/
+  justify-content: flex-end;
+}
+
+input:placeholder-shown {
+  font-family: 'Verdana', cursive;
+  font-style: italic;
+}
+
+.edit-input {
+  padding: 8px 10px;
+  margin: 5px;
+  border-radius: 7px;
+  font-size: 16px;
+  border: none;
+  width: -webkit-fill-available;
+}
+
+.save {
+  font-size: 16px;
+  font-family: 'Verdana', cursive;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  padding: 6px 8px;
+  background-color: rgb(51, 212, 100);
+  margin: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+}
+
+.cancel {
+  font-size: 16px;
+  font-family: 'Verdana', cursive;
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  padding: 6px 8px;
+  background-color: gray;
+  margin: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+  text-align: center;
+  background: #1bbe72; /* Must match the end of the gradient */
+  padding: 3px;
+}
